@@ -31,10 +31,9 @@ bars:
                     # "taskbar"
                 ]
             center: ["clock", "weather", "cpu", "memory"]
-            right:
-                [
+            right: [
                     "systray",
-                    "bluetooth",
+                    # "bluetooth",
                     "wifi",
                     "volume",
                     "battery",
@@ -229,25 +228,25 @@ widgets:
                 low: 25
                 medium: 50
                 high: 90
-    taskbar:
-        type: "yasb.taskbar.TaskbarWidget"
-        options:
-            icon_size: 16
-            tooltip: false
-            show_only_visible: false
-            strict_filtering: false
-            monitor_exclusive: true
-            animation:
-                enabled: true
-            preview:
-                enabled: true
-                width: 450
-                delay: 400
-                padding: 12
-            ignore_apps:
-                processes: []
-                titles: []
-                classes: []
+    # taskbar:
+    #     type: "yasb.taskbar.TaskbarWidget"
+    #     options:
+    #         icon_size: 16
+    #         tooltip: false
+    #         show_only_visible: false
+    #         strict_filtering: false
+    #         monitor_exclusive: true
+    #         animation:
+    #             enabled: true
+    #         preview:
+    #             enabled: true
+    #             width: 450
+    #             delay: 400
+    #             padding: 12
+    #         ignore_apps:
+    #             processes: []
+    #             titles: []
+    #             classes: []
     workspaces:
         type: "komorebi.workspaces.WorkspaceWidget"
         options:
@@ -259,6 +258,7 @@ widgets:
             label_zero_index: false
             hide_empty_workspaces: false
             hide_if_offline: false
+            enable_scroll_switching: true
             toggle_workspace_layer:
                 enabled: false
                 tiling_label: "Tiling"
@@ -393,25 +393,25 @@ widgets:
                 offset_left: 0
                 wifi_icons_secured: ["\ue670", "\ue671", "\ue672", "\ue673"]
                 wifi_icons_unsecured: ["\uec3c", "\uec3d", "\uec3e", "\uec3f"]
-    bluetooth:
-        type: "yasb.bluetooth.BluetoothWidget"
-        options:
-            label: "<span>{icon}</span> {device_count}"
-            label_alt: "{device_name}"
-            label_no_device: "No devices connected"
-            label_device_separator: ", "
-            max_length: 10
-            max_length_ellipsis: "..."
-            icons:
-                bluetooth_on: "\udb80\udcaf"
-                bluetooth_off: "\udb80\udcb2"
-                bluetooth_connected: "\udb80\udcb1"
-            device_aliases:
-                - name: "T5.0"
-                  alias: "\uf025"
-            callbacks:
-                on_left: "toggle_label"
-                on_right: "exec cmd.exe /c start ms-settings:bluetooth"
+    # bluetooth:
+    #     type: "yasb.bluetooth.BluetoothWidget"
+    #     options:
+    #         label: "<span>{icon}</span> {device_count}"
+    #         label_alt: "{device_name}"
+    #         label_no_device: "No devices connected"
+    #         label_device_separator: ", "
+    #         max_length: 10
+    #         max_length_ellipsis: "..."
+    #         icons:
+    #             bluetooth_on: "\udb80\udcaf"
+    #             bluetooth_off: "\udb80\udcb2"
+    #             bluetooth_connected: "\udb80\udcb1"
+    #         device_aliases:
+    #             - name: "T5.0"
+    #               alias: "\uf025"
+    #         callbacks:
+    #             on_left: "toggle_label"
+    #             on_right: "exec cmd.exe /c start ms-settings:bluetooth"
     quick_launch:
         type: "yasb.quick_launch.QuickLaunchWidget"
         options:
